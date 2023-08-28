@@ -237,31 +237,179 @@
 // ! means NOT inverts (has precedence first befor and or)
  // logical operators
 
- const hasdrivrLicence = true;
- const hasGoodVision =  true;
+//  const hasdrivrLicence = true;
+//  const hasGoodVision =  true;
 
- console.log(hasdrivrLicence && hasGoodVision); // false
- console.log(hasdrivrLicence || hasGoodVision);// true
- console.log(hasdrivrLicence && !hasGoodVision);//trues
+//  console.log(hasdrivrLicence && hasGoodVision); // false
+//  console.log(hasdrivrLicence || hasGoodVision);// true
+//  console.log(hasdrivrLicence && !hasGoodVision);//trues
 
-const harishCanDrive = hasdrivrLicence && hasGoodVision;
+// const harishCanDrive = hasdrivrLicence && hasGoodVision;
 
-if(harishCanDrive){
-    console.log("Harish Can Drive");
-}
-else{
-    console.log("Harish Cannot Drive");
-}
+// if(harishCanDrive){
+//     console.log("Harish Can Drive");
+// }
+// else{
+//     console.log("Harish Cannot Drive");
+// }
 
-const isTired = true ;
-console.log(hasdrivrLicence || hasGoodVision || isTired)
+// const isTired = true ;
+// console.log(hasdrivrLicence || hasGoodVision || isTired)
 
-if(harishCanDrive && !isTired){
-    console.log("Harish Cannot Drive Or Harish Is Tired");
-}else{
-    console.log("Harish Can Drive And Is Not Tired");
+// if(harishCanDrive && !isTired){
+//     console.log("Harish Cannot Drive Or Harish Is Tired");
+// }else{
+//     console.log("Harish Can Drive And Is Not Tired");
     
-}
+// }
+
+//challenge 3
+// let avgDolphins = 0;
+// let avgKoalas = 0;
+
+// for (let i=0;i<3;i++){
+//     const dolphin = prompt("enter the data for dolphin");
+//     avgDolphins = avgDolphins + Number(dolphin);
+   
+// }
+// avgDolphins /= 3;
+
+// for (let i=0;i<3;i++){
+//     const koala = prompt("enter the data for koala");
+//     avgKoalas = avgKoalas + Number(koala);
+
+// }
+
+// avgKoalas /= 3;
+
+// if(avgDolphins > avgKoalas && avgDolphins > 100){
+//     console.log(` bonus 1 dolphins wins ${avgKoalas} ${avgDolphins}`);
+
+// }
+// else if(avgKoalas > avgDolphins && avgKoalas > 100){
+
+//     console.log(` bonus 1 koala win ${avgKoalas} ${avgDolphins} `);
+
+// }
+// else if(avgDolphins === avgKoalas && avgDolphins > 100 && avgKoalas > 100)
+//   { 
+//      console.log(` bonus 2 draw ${avgKoalas} ${avgDolphins}`);
+//     }
+
+//switch statements
+
+// const day = prompt("enter the day");
+// switch (day) {
+//     case 'monday':
+//         console.log("Go to College");
+//         console.log("go teach from 5-7");
+//         console.log("start coding from 8-10 and 11-1")
+        
+//         break;
+//         case 'tuesday':
+//         console.log("Go to College");
+//         console.log("go teach from 5-7");
+//         console.log("start coding from 8-10 and 11-1")
+            
+//         break;
+//         case 'wednesday':
+//         console.log("Go to College");
+//         console.log("go teach from 5-7");
+//         console.log("start coding from 8-10 and 11-1")
+                
+//         break;
+//         case 'thursday':
+//         console.log("Go to College");
+//         console.log("go teach from 5-7");
+//         console.log("start coding from 8-10 and 11-1")
+                    
+//         break;
+//         case 'friday':
+//         console.log("wake up at 9");
+//         console.log("code 10-2");
+//         console.log('teach 5 to 7')
+//         console.log("start coding from 8-10 and 11-1")
+                        
+//         break;
+//         case 'saturday':
+//         console.log("wake up at 9");
+//         console.log("code 10-2");
+//         console.log('teach 5 to 7')
+//         console.log("start coding from 8-10 and 11-1")
+                            
+//         break;
+//         case 'sunday':
+//         console.log("wake up at 9");
+//         console.log("code 10-2");
+//         console.log('teach 5 to 7')
+//         console.log("start coding from 8-10 and 11-1")
+                                
+//         break;
+
+//         default:
+//         console.log("Invalid day, please try again.");
+//         break;
+// }
+
+// // if we forgot to add breaks in between then code will continue executing
+// // switch test for strict ===
+
+// if(day === "monday" || day === "tuesday" || day === "wednesday" || day === "thursday"){
+//     console.log("Go to College");
+//     console.log("go teach from 5-7");
+//     console.log("start coding from 8-10 and 11-1")
+// }
+// else if(day === "friday" || day === "saturday" || day === "sunday"){
+//     console.log("wake up at 9");
+//     console.log("code 10-2");
+//     console.log('teach 5 to 7')
+//     console.log("start coding from 8-10 and 11-1")
+// }
+// else{
+//     console.log("invalid input");
+// }
+
+// switch statements and expressions
+// expression is a piece of code that produces a value
+// statements doesnt produce a value
+
+//expression
+
+// 3+4;
+// 1991;
+
+// //statements
+
+// if (condition) {
+//     const something = 9;
+// }
+
+//template literal is an expression
+// cannot use statements in a tremplate literal but ternary operator
+
+
+//ternary operator is an expression
+// best usecase is quick decision
+
+// const age = 23;
+
+// console.log(`i like to drink ${age >= 18 ? console.log("daaru ab") : console.log("nikal laude")
+// }`)
+
+// challenge 4
+
+// const bill = Number(prompt("enter the bill"));
+
+// const tip  = bill>50 && bill <=300 ? (15/100)*bill : (20/100)*bill;
+
+// const finalBill = bill + tip;
+
+// console.log(`the total amount is ${finalBill} with a bill of ${bill} and  a tip of ${tip}`);
+
+
+
+
+
 
 
 
