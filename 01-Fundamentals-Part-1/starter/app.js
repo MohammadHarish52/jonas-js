@@ -56,7 +56,7 @@
 // let age = 40;
 // age = 21 ; 
 
-// // best usecase for keeping the value that needs not to be changed
+// // best usecase for keeping the value that needs not to be changed further
 // const maxMarks = 49;
 
 // // cannot declare a const without a value it have to have atleast one value
@@ -79,7 +79,7 @@
 
 // console.log(ageHarish,ageRidhimaa);
 
-// // + is used for concactation and addition both - i used only for subtraction
+// // + is used for concactation and addition both but  -  is used only for subtraction
 
 // const myName = "Harish";
 // const herName = "Ridhimaa";
@@ -117,14 +117,162 @@
 
 //string and template literals
 
-const firstName = "harish";
-const subject = "javascript";
-const birthyear = 2002;
+// const firstName = "harish";
+// const subject = "javascript";
+// const birthyear = 2002;
 
-const Jonas  = "I'm " + firstName + "a" + birthyear + "born";
-console.log(Jonas);
-// template literals
-const ridhias = `i m ${firstName} a ${birthyear} born and i am currently learning javascript`;
-console.log(ridhias);
+// const Jonas  = "I'm " + firstName + "a" + birthyear + "born";
+// console.log(Jonas);
+// // template literals
+// const ridhias = `i m ${firstName} a ${birthyear} born and i am currently learning javascript`;
+// console.log(ridhias);
+// // multiple string after es6 just use another line before es6 /n/ was used
+// console.log(`hi
+// there this is harish and i love to learn ${subject}
+// in javascipt`);
+
+
+// lec 5 
+// contril structure
+// if else control structure
+// const age = 15;
+// const isOldEnough = age>= 18;
+// if(isOldEnough){
+//     console.log('you can get driving licence');
+// } else {
+// const yearLeft = 18-age;
+
+//     console.log(`you cannot get driving licence ,you have to wait ${yearLeft} years`);
+// }
+
+// if else if ladder
+
+// const birthYear = prompt("enter birthyear")
+// if(birthYear >= 2000){
+//     console.log("you are from 21st century")
+// } else if (birthYear > 1900 && birthYear <=1999)
+// {
+//     console.log("you are from 20th century")
+// }
+// else {
+//     console.log("you are from prehistoric period")
+// }
+
+//challenge 1 & 2 summed up 
+
+// const markWeight = prompt("enter mark weight");
+// const joWeight = prompt("enter jo weight");
+// const markheight = prompt("enter mark weight");
+// const joheight = prompt("enter mark weight");
+
+// let markBmi = ((markWeight)/(markheight**2));
+// console.log(markBmi);
+// let joBmi = ((joWeight)/(joheight**2));
+// console.log(joBmi);
+
+// if(markBmi > joBmi){
+//     console.log(`mark has a higher bmi of ${markBmi} than that of jo ${joBmi}`)
+// }else{
+//     console.log(`jo has a higher bmi of ${joBmi} than that of mark ${markBmi}`)
+// }
+
+// type coersion(js automatic conversion bw data types) and type conversion(manuel conversion by a user)
+// type conversion
+// const inputYear = '2002';
+// console.log((Number(inputYear))); // returns the string in a number;
+// console.log((Number(inputYear))+ 4); //  returns 2006 
+
+// const name = "PD";
+// console.log((Number(name))); // NaN
+
+// console.log((String(23)), 23);
+
+// // type coersion
+// console.log(" hi i am Harish and i am" + 21 +" years old"); // + converts the number to string
+// console.log("23" - "10" - 7); //  - operator does only subtraction and hence converts string to numbers
+// console.log("12" * "3"); // 36
+
+// // booleans
+// // 5 falsy values null ,0 ,'', undefined , NaN
+
+// console.log((Boolean(0)));
+// console.log((Boolean(undefined)));
+// console.log((Boolean('harish')));
+// console.log((Boolean({})));
+
+// let paisa  =  0 ; // will return false since it lies in 5 falsy values
+// paisa = 9; 
+// if(paisa){
+//     console.log("i have some money")
+// }else{
+//     console.log("i dont have any money")
+// }
+// let height;
+// if(height){
+//     console.log("height is defined");
+// }
+// else{
+//     console.log("height is undefined");
+// }
+
+// equality operators
+
+// === strict equality operator does not perform type coersion
+
+// let age = 18;
+// if(age === "18") console.log("adult bn gye!");
+
+// // == checks for loose equality and does type coersion , try to avoid loose equality
+
+// if(age == "18") console.log("arey ye data type to check hi nhi krrha");
+//  // type of prompt function is always a string
+//  // for converting a propmpt we can use type conversion in js
+//  const getTheNumber  = Number(prompt("Enter the number"));
+//  console.log(typeof getTheNumber);
+// // !== is a difference operator
+
+// boolean logic && || ! 
+// && means AND 1001 sb true hoga tbhi tru
+// || means OR 1110 ek bhi tru hoga tbhi tru
+// ! means NOT inverts (has precedence first befor and or)
+ // logical operators
+
+ const hasdrivrLicence = true;
+ const hasGoodVision =  true;
+
+ console.log(hasdrivrLicence && hasGoodVision); // false
+ console.log(hasdrivrLicence || hasGoodVision);// true
+ console.log(hasdrivrLicence && !hasGoodVision);//trues
+
+const harishCanDrive = hasdrivrLicence && hasGoodVision;
+
+if(harishCanDrive){
+    console.log("Harish Can Drive");
+}
+else{
+    console.log("Harish Cannot Drive");
+}
+
+const isTired = true ;
+console.log(hasdrivrLicence || hasGoodVision || isTired)
+
+if(harishCanDrive && !isTired){
+    console.log("Harish Cannot Drive Or Harish Is Tired");
+}else{
+    console.log("Harish Can Drive And Is Not Tired");
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
