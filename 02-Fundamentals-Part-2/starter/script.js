@@ -75,24 +75,116 @@
 
 //calling is same for both arrow and simple
 
-const cutFruits = (fruit) => {
-    return fruit * 4
-};
+// const cutFruits =  (fruit) => {
+//     return (fruit) * 4
+// };
 
-//calling a function inside a function
+// //calling a function inside a function
 
-function vegetableProduce(potato,tomato){
+// function vegetableProduce(potato,tomato){
 
-    cutFruits(potato);
+//     cutFruits(potato);
    
 
-    console.log(potato,tomato);
-    const kaadha = `you have ${cutFruits(potato)} and ${tomato}`;
-    return kaadha;
-}
+//     console.log(potato,tomato);
+//     const kaadha = `you have ${cutFruits(potato)} and ${tomato}`;
+//     return kaadha;
+// }
 
-vegetableProduce(10,5);
-console.log(vegetableProduce(10,5));
+// vegetableProduce(10,5);
+// console.log(vegetableProduce(10,5));
+
+//challenge 5
+
+// const calcAverage = (a,b,c) => (a+b+c)/3;
+
+// const scoreDolphins = calcAverage(85,54,41);
+// const scoreKoala = calcAverage(23,34,27);
+
+// console.log(scoreDolphins,scoreKoala);
+
+// const checkWinner = (avgDolphins,avgKoalas) =>{
+
+//     if(avgDolphins >= 2*avgKoalas){
+//         console.log(`Dolphins wins (${avgDolphins} vs ${avgKoalas})`);
+
+//     }
+//     else if(avgKoalas >= 2*avgDolphins){
+//         console.log (`koalas win(${avgKoalas} vs ${avgDolphins})`)
+//     }else{
+//         console.log("no win")
+//     }
+// }
+// checkWinner(scoreDolphins,scoreKoala);
+
+//Arrays(ds)
+// const friends = ["shushmit" , "Ridhimaa" , "Nainish"];
+// //second way
+// const years = new Array(1991 , 1678 , 1974, 1995);
+// //acccesing values of a given array
+// console.log(friends[0]);
+// //length of array
+// console.log(friends.length);
+// // last is length -1;
+// //mutating the array
+// friends[2] = "Petar par kar bhai";
+// // only primitive values in const are immutable
+// // we cannot change the whole array
+// // we can put different kind of values in a single array
+// const harish = [ "harish" , 21 , friends];
+// console.log(harish);
+
+// const calcAge = (birthyear)=>{
+//     return 2023 - birthyear;
+// }
+// const y = [2001,2003,1998,2000];
+
+// for(let i = 0 ; i <y.length ;i++){
+//     let age = (calcAge(y[i]));
+//     console.log(age);
+// }
+
+// const friends = ["shushmit" , "Ridhimaa" , "Nainish"];
+// // add elements at the end of the array
+// friends.push("kamran");
+// // add elements at the start of the array
+//  friends.unshift('Harish');
+
+//  //Remove elements from the array
+//  //removing last element from the array
+//  friends.pop();
+//  //removing from start
+//  friends.shift();
+//  console.log(friends);
+//  //["shushmit", "Ridhimaa" , "Nainish"]  
+//  //get the position of a given element
+//  console.log(friends.indexOf("nainish"));
+//  //es6 include boolean 
+//  if(friends.includes("Ridhimaa")){
+//     console.log ("yes it includes Ridhimaa");
+//  }
+
+//coding 2 challenge
+
+
+// const tipCalc = (bill)=>{
+//     let tip = (bill>5 && bill<=300) ? (15/100)*bill : (20/100)*bill;
+//     let totalbill = bill+tip;
+//     return totalbill;
+// }
+// const bills = [tipCalc(125),tipCalc(555),tipCalc(44)];
+// console.log(`Total tips: ${bills}`);
+
+
+
+
+
+
+
+
+
+   
+
 
 
 
