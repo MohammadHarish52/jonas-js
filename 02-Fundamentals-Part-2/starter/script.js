@@ -175,6 +175,83 @@
 // const bills = [tipCalc(125),tipCalc(555),tipCalc(44)];
 // console.log(`Total tips: ${bills}`);
 
+//objects
+// const person = {
+//     name:"Harish",
+//     birthYear :2002,
+//     passion:"Web Developement",
+//     friend: "Ridhimaa",
+//     hasDriverLicence:false,
+//     // calcAge:function(){
+//     //     return 2023 - this.birthYear;// this is used to access the values of the same object function attached to a object is called a method
+//     // }
+//     calcAge: function()  {
+//         this.age = 2023 - this.birthYear;
+//         return  this.age;
+//         // this is used to access the values of the same object function attached to a object is called a method
+//     },
+//     calcGetsummary:function() {
+//         this.summary = `name is ${person.name} age is ${this.age} friend is ${this.friend} and have a passion of ${this.passion}`;
+//         return this.summary;
+//     }
+
+// }
+
+// //each key is called a property of the given object in the given object
+
+// //in objects the order doesnt care the about accesing all it cares about the priperties and how we are acccesing them
+
+// // we use array for more ordered data and objects for more structureed data in which we need to specify the given properties for better understanding
+// console.log(`${person['name']},${person['passion']} is my favourite`);
+// //acccesing objects values
+// // two ways to retrieve data from an object
+// //dot notation
+// console.log(person.name);
+// //bracket notation
+// console.log(person["name"]);
+
+// //adding new proprties to an object
+// person.city="Kanpur";
+// //bracket notation addition
+// person["country"]= 'India';
+
+// //objects methods'
+// console.log(person.calcGetsummary());
+// console.log(person.age);
+// console.log(person);
+
+//chaleenge 3
+// const Mark = {
+//     fullName : "Mark Miller",
+//     mass:78,
+//     height:1.69,
+//     markBmi:function(){
+//         return (this.mass/(Math.pow((this.height/100),2))).toFixed(2) ;
+//     }
+// }
+// const john ={
+//     fullName:'John Smith',
+//     mass:92,
+//     height:1.95,
+//     johnBmi:function(){
+//         return ((this.mass)/(Math.pow(((this.height)/100),2))).toFixed(2);
+       
+//     }
+// }
+// if(john.johnBmi()>Mark.markBmi()){
+//         console.log(`john has higher BMI than ${Mark.fullName}`);
+
+//     }
+//     else if(
+//         john.johnBmi()===Mark.markBmi()){
+//             console.log("both have same bmi");
+//         }
+//         else{
+//             console.log('mark has higer BMIs');
+//         }
+
+
+
 
 
 
