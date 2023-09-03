@@ -253,10 +253,87 @@
 
 // iteration in javscript
 
-for (let i = 0; i < 10; i++) {
-    console.log(`lifting weigths repetition ${i}`);
+// for (let i = 0; i < 10; i++) {
+//     console.log(`lifting weigths repetition ${i}`);
     
-}
+// }
+
+// //looping thru arrays
+// const newArr = [];
+// const arr=[4,"hello","world"];
+// for (let i = 0; i < arr.length; i++) {
+//     const element = arr[i];
+//     console.log(element , typeof element);
+//     newArr.push(typeof element);
+//     console.log(newArr);
+// }
+
+// //create array of birthyears
+
+// const years = [1991,2002,2003,1999];
+// const age = []
+
+// for (let i = 0; i < years.length; i++) {
+//     const element = years[i];
+//     const ages  = 2023 - element;
+//     age.push(ages);    
+// }
+// console.log(age);
+
+// //continue and break
+// //break is used to completely terminate the loop
+// // continue is used when you want to skip one iteration but still go on with other iterations
+// let ms = []
+// let yr = [4 ,6 , "hi" , "byebablue" , "bitch rids i loves yous sos muschs"];
+// for (let i = 0; i < yr.length; i++) {
+//     const element = yr[i];
+//     if(typeof element !== 'string') continue; //skips the number in the given array
+//     ms.push(element);
+// }
+// console.log(ms);
+
+//looping backwards
+//  let yr = [4 ,6 , "hi" , "byebablue" , "bitch rids i loves yous sos muschs"];
+// for(var i=yr.length-1;i>=0;i--){
+//     const element = yr[i];
+//     console.log(element);
+// }
+
+// //print 5 stars in 3 lines 
+// for (let i = 0; i < 4; i++) {
+//    console.log(`--exercise--${i}`)
+//    for(let j = 0;j<6;j++){
+//     console.log(`${j}`)
+//    }
+    
+// }
+
+//while loop
+
+// let dice = Math.floor((
+//     Math.random() * 6) +1
+// )
+// while(dice !== 6){
+//     console.log(`you rolled a ${dice} `);
+//     dice = Math.floor(
+//         Math.random() * 6 +1
+//     )
+// }
+// const bills =[22,295,176,440,37,105,10,1100,86,52]
+// const tips = [];
+// const totals = [];
+// const tipCalc = (bill)=>{
+//     let tip = (bill>5 && bill<=300) ? (15/100)*bill : (20/100)*bill;
+//     let totalbill = bill+tip;
+//     return totalbill;
+// }
+// for(let i=0;i<bills.length;i++){
+//     tips.push(tipCalc(bills[i]));
+//     totals.push(tips[i]+bills[i]);
+// }
+// console.log(tips);
+// console.log(totals);
+
 
 
 
