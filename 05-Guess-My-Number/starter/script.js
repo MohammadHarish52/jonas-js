@@ -16,6 +16,8 @@ let number = Math.floor(Math.random() * 20 + 1);
 let score = 20;
 let highScore = 0;
 
+let message = document.querySelector('.message');
+
 const label_Score = document.querySelector('.label-score');
 const body = document.getElementById('body');
 const again = document.getElementById('again');
@@ -27,47 +29,54 @@ guessButtonElement.addEventListener('click', () => {
   // when the input is empty
 
   if (!guessedValue) {
-    var message = document.querySelector('.message');
     message.textContent = `😂 Bhai kuch likh to pehle usme`;
   }
 
   //when the value is correct
   else if (guessedValue === number) {
-    document.querySelector('.number').textContent = `${number}`;
+    message.textContent = `${number}`;
     body.style.backgroundColor = `#183D3D`;
-    score = score + guessedValue;
+
     label_Score.textContent = `Score: ${score}`;
     console.log('yes');
-    document.querySelector('.message').textContent = `correct Number 😍`;
+    message.textContent = `correct Number 😍`;
     if (score > highScore) {
       highScore = score;
       document.querySelector('.highscore').textContent = highScore;
     }
   }
 
-  //too high
-  else if (guessedValue > number) {
+  //when guessed value is wrong
+  else if (guessedValue !== number) {
     if (score > 0) {
       score = score - 1;
-      label_Score.textContent = `Score: ${score}`;
-      document.querySelector('.message').textContent = `tooo high 🤣`;
+      label_Score.textContent = `👌 Score: ${score}`;
+      message.textContent =
+        guessedValue < number ? `Too Low 🤣` : `tooo high 🤣`;
     } else {
       body.style.backgroundColor = `#9A3B3B`;
-      document.querySelector('.message').textContent = `You lost the game😘😘`;
+      message.textContent = `You lost the game😘😘`;
+      label_Score.textContent = 0;
     }
   }
 
-  //too low
-  else if (guessedValue < number) {
-    if (score > 0) {
-      score = score - 1;
-      label_Score.textContent = `Score: ${score}`;
-      document.querySelector('.message').textContent = `Too Low 🤣`;
-    } else {
-      body.style.backgroundColor = `#9A3B3B`;
-      document.querySelector('.message').textContent = `You lost the game😘😘`;
-    }
-  }
+  //too high
+  //   else if (guessedValue > number) {
+  //     if (score > 0) {
+  //     } else {
+  //       body.style.backgroundColor = `#9A3B3B`;
+  //       message.textContent = `You lost the game😘😘`;
+  //     }
+  //   }
+
+  //   //too low
+  //   else if (guessedValue < number) {
+  //     if (score > 0) {
+  //     } else {
+  //       body.style.backgroundColor = `#9A3B3B`;
+  //       message.textContent = `You lost the game😘😘`;
+  //     }
+  //   }
 });
 
 again.addEventListener('click', () => {
