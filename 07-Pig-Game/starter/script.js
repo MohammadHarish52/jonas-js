@@ -12,6 +12,7 @@ const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 const player0 = document.querySelector('.player--0');
 const player1 = document.querySelector('.player--1');
+const resetButton = document.querySelector('.btn--new');
 
 //starting condition
 score1El.textContent = 0;
@@ -76,4 +77,10 @@ btnHold.addEventListener('click', () => {
       switchPlayer();
     }
   }
+});
+
+//Reset the game
+
+resetButton.addEventListener('click', e => {
+  document.location.reload();
 });
