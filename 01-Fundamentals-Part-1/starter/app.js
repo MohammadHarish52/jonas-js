@@ -240,9 +240,9 @@
 //  const hasdrivrLicence = true;
 //  const hasGoodVision =  true;
 
-//  console.log(hasdrivrLicence && hasGoodVision); // false
+//  console.log(hasdrivrLicence && hasGoodVision); // true
 //  console.log(hasdrivrLicence || hasGoodVision);// true
-//  console.log(hasdrivrLicence && !hasGoodVision);//trues
+//  console.log(hasdrivrLicence && !hasGoodVision);// false
 
 // const harishCanDrive = hasdrivrLicence && hasGoodVision;
 
