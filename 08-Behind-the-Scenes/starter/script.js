@@ -6,6 +6,7 @@ function calcAge(birthYear) {
   const y = new Date();
   const currentY = y.getUTCFullYear();
   const age = currentY - birthYear;
+  const firstName = `Ridhimaa`;
   function printAge() {
     const output = `You are ${age} ,born in ${birthYear}`;
     console.log(output);
@@ -14,11 +15,18 @@ function calcAge(birthYear) {
     if (birthYear >= 1981 && birthYear <= 2003) {
       const str = `Oh , and you're a milleneal , ${firstName}`;
       console.log(str);
+      var hi = `hello aaaahahahahah`;
 
       function add(a, b) {
         return a + b;
       }
+      output = `NEw output`;
     }
+    console.log(hi);
+    // is accesble since var is accesible
+    // add(2,3); refrence error since functions are also block scoped
+
+    //console.log(str); // reference error since let and const are block scope
   }
   printAge();
 
