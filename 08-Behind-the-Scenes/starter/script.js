@@ -88,31 +88,121 @@
 //  this keyword
 // this keyword always points to the method calling the object
 // regular function call returns undefined for this keywords
-console.log(this); // returns the window object
+// console.log(this); // returns the window object
 
-const kalaAge = function (birth) {
-  const age = 2023 - birth;
-  console.log(this);
+// const kalaAge = function (birth) {
+//   const age = 2023 - birth;
+//   console.log(this);
+// };
+
+// function add(a, b) {
+//   console.log(this);
+//   return a + b;
+// } // return undefined in the object for this
+
+// const sub = (a, b) => {
+//   console.log(this);
+//   return a - b;
+// }; // arrow function gives the parent object to which it is lexically attached
+
+// const harish = {
+//   name: 'Harish',
+//   calcAge: function () {
+//     console.log(this); // returns this object since harish is the object containing the method
+//   },
+// };
+
+// kalaAge(2002);
+// add(3, 4);
+// sub(4, 3);
+// harish.calcAge();
+
+// ///////////////////////////////////////
+// // Regular Functions vs. Arrow Functions
+// // var firstName = 'Matilda';
+
+// const jonas = {
+//   firstName: 'Jonas',
+//   year: 1991,
+//   calcAge: function () {
+//     // console.log(this);
+//     console.log(2037 - this.year);
+
+//     // Solution 1
+//     // const self = this; // self or that
+//     // const isMillenial = function () {
+//     //   console.log(self);
+//     //   console.log(self.year >= 1981 && self.year <= 1996);
+//     // };
+
+//     // Solution 2
+//     const isMillenial = () => {
+//       console.log(this);
+//       console.log(this.year >= 1981 && this.year <= 1996);
+//     };
+//     isMillenial();
+//   },
+
+//   greet: () => {
+//     console.log(this);
+//     console.log(`Hey ${this.firstName}`);
+//   },
+// };
+// jonas.greet();
+// jonas.calcAge();
+
+// // arguments keyword
+// const addExpr = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addExpr(2, 5);
+// addExpr(2, 5, 8, 12);
+
+// var addArrow = (a, b) => {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addArrow(2, 5, 8);
+
+////////////
+// primitive data types
+let lastNAme = 'williams';
+let oldNAme = lastNAme;
+lastNAme = 'Harish';
+console.log(lastNAme, oldNAme);
+
+//Reference types
+const Ridhimaa = {
+  firstName: 'Ridhimaa',
+  lastName: 'Saxena',
+  age: 20,
 };
+console.log(Ridhimaa);
 
-function add(a, b) {
-  console.log(this);
-  return a + b;
-} // return undefined in the object for this
+const fatherRids = Ridhimaa;
+fatherRids['firstName'] = 'Sunil';
+// the original object will be mutated
+//since its address of the heap is stored in the execution context
+console.log(fatherRids);
 
-const sub = (a, b) => {
-  console.log(this);
-  return a - b;
-}; // arrow function gives the parent object to which it is lexically attached
+//copying the objects
+// without changing the original
 
 const harish = {
   name: 'Harish',
-  calcAge: function () {
-    console.log(this); // returns this object since harish is the object containing the method
-  },
+  age: 21,
+  friend: ['adeem', 'Amaan'],
 };
 
-kalaAge(2002);
-add(3, 4);
-sub(4, 3);
-harish.calcAge();
+const harishCopy = Object.assign({}, harish);
+harishCopy.name = 'PD';
+console.log(harish);
+console.log(harishCopy);
+
+harishCopy.friend.push('ridhi');
+
+// the whole array will be mutated
+
+console.log(harishCopy);
+console.log(harish);
