@@ -46,30 +46,63 @@ restaurant.orderDelievery({
   staterterIndex: 2,
 });
 
+// spread operator
+const arr = [7, 8, 9];
+
+const newArr = [1, 2, ...arr];
+
+// 1  2  7  8  9
+
+console.log(newArr);
+
+// copy array
+const newMenu = [...restaurant.mainMenu];
+
+//joining two arrays
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+// iterables : arrays, strings , maps , sets . Not objects
+const str = 'Harish';
+const letters = [...str, ' ', 'D'];
+
+console.log(letters);
+
+const ingredients = [
+  prompt('lets make ?'),
+  prompt('lets make ?'),
+  prompt('lets make ?'),
+];
+
+console.log(ingredients);
+
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+
+restaurant.orderPasta(...ingredients);
+
 //Destructuring objetcs
 
-const { name, openingHours, categories } = restaurant;
-console.log(name, openingHours, categories);
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
 
-// for names other thn the original
-let { name: myName, openingHours: myOpeningHours } = restaurant;
-console.log(myName, myOpeningHours);
+// // for names other thn the original
+// let { name: myName, openingHours: myOpeningHours } = restaurant;
+// console.log(myName, myOpeningHours);
 
-//Default values
-const { menu = [], starterMenu: starters = [] } = restaurant;
-console.log(menu, starters);
+// //Default values
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+// console.log(menu, starters);
 
-//Mutating variables
-let a = 111;
-let b = 999;
-const obj = { a: 23, b: 7, c: 14 };
-({ a, b } = obj);
+// //Mutating variables
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
+// ({ a, b } = obj);
 
-//nested objects
-const {
-  fri: { open: o, close: c },
-} = openingHours;
-console.log(o, c);
+// //nested objects
+// const {
+//   fri: { open: o, close: c },
+// } = openingHours;
+// console.log(o, c);
 
 // Destructuring arrays
 /*
