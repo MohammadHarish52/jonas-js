@@ -150,6 +150,11 @@ if (restaurant.orderPizza) {
 
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
+// nullish : null and undefined (Not 0 or '')
+
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect); // 25
+
 //Destructuring objetcs
 
 // const { name, openingHours, categories } = restaurant;
