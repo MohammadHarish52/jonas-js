@@ -125,35 +125,64 @@ restaurant.orderDelievery({
 // ); // main ingrdient will take mushroom and the rest will be taken by other ingredient
 
 // short circuiting using OR
-console.log('------OR------');
-console.log(3 || 'jonas'); // 3 will be returned since first value is  a truthly value
-console.log('' || 'harish'); // harish
-console.log(true || 0); // true
-console.log(undefined || null); // null
+// console.log('------OR------');
+// console.log(3 || 'jonas'); // 3 will be returned since first value is  a truthly value
+// console.log('' || 'harish'); // harish
+// console.log(true || 0); // true
+// console.log(undefined || null); // null
 
-restaurant.numGuests = 25;
-const guests1 = restaurant.numGuests || 'Does not exist'; // 25
+// restaurant.numGuests = 25;
+// const guests1 = restaurant.numGuests || 'Does not exist'; // 25
 
-// the OR short circuiting works till it find a true value and then returns the same true value
+// // the OR short circuiting works till it find a true value and then returns the same true value
 
-//short circuiting in AND
+// //short circuiting in AND
 
-console.log('------AND-------');
-console.log(0 && 'jonas'); // 0;
-console.log(7 && 'jonas'); // "jonas"
+// console.log('------AND-------');
+// console.log(0 && 'jonas'); // 0;
+// console.log(7 && 'jonas'); // "jonas"
 
-console.log('hello' && 23 && null && 'jonas'); // null will return the statement after the first true value is found
+// console.log('hello' && 23 && null && 'jonas'); // null will return the statement after the first true value is found
 
-if (restaurant.orderPizza) {
-  restaurant.orderPizza('mushrooms', 'spinach');
-}
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('mushrooms', 'spinach');
+// }
 
-restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+// restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
-// nullish : null and undefined (Not 0 or '')
+// // nullish : null and undefined (Not 0 or '')
 
-const guestCorrect = restaurant.numGuests ?? 10;
-console.log(guestCorrect); // 25
+// const guestCorrect = restaurant.numGuests ?? 10;
+// console.log(guestCorrect); // 25
+
+// logical assigment operators
+// Or assigment operator
+
+const rest1 = {
+  name: 'capri',
+  numOfguests: 20,
+};
+
+const rest2 = {
+  name: 'pizzeria',
+  owner: 'Zeff',
+};
+
+// rest1.numOfguests ||= 10;
+// rest2.numOfguests ||= 10;
+
+//Nullish assigment operator
+rest1.numOfguests ??= 10;
+rest2.numOfguests ??= 10;
+
+console.log(rest1);
+console.log(rest2);
+
+//logical AND assignment operator
+
+rest2.owner &&= 'anonymus';
+
+console.log(rest2);
 
 //Destructuring objetcs
 
