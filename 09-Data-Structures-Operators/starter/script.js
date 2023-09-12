@@ -37,6 +37,11 @@ const restaurant = {
         ${address} and ${time}`
     );
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredient) {
+    console.log(mainIngredient);
+    console.log(otherIngredient);
+  },
 };
 
 restaurant.orderDelievery({
@@ -47,37 +52,77 @@ restaurant.orderDelievery({
 });
 
 // spread operator
-const arr = [7, 8, 9];
+// const arr = [7, 8, 9];
 
-const newArr = [1, 2, ...arr];
+// const newArr = [1, 2, ...arr];
 
-// 1  2  7  8  9
+// // 1  2  7  8  9
 
-console.log(newArr);
+// console.log(newArr);
 
-// copy array
-const newMenu = [...restaurant.mainMenu];
+// // copy array
+// const newMenu = [...restaurant.mainMenu];
 
-//joining two arrays
-const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// //joining two arrays
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 
-// iterables : arrays, strings , maps , sets . Not objects
-const str = 'Harish';
-const letters = [...str, ' ', 'D'];
+// // iterables : arrays, strings , maps , sets . Not objects
+// const str = 'Harish';
+// const letters = [...str, ' ', 'D'];
 
-console.log(letters);
+// console.log(letters);
 
-const ingredients = [
-  prompt('lets make ?'),
-  prompt('lets make ?'),
-  prompt('lets make ?'),
+// const ingredients = [
+//   prompt('lets make ?'),
+//   prompt('lets make ?'),
+//   prompt('lets make ?'),
+// ];
+
+// console.log(ingredients);
+
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+
+// restaurant.orderPasta(...ingredients);
+
+// rest operator
+const [a, b, ...other] = [1, 2, 3, 4, 5];
+console.log(other); // takes the left over values of the arrays
+
+const [pizza, , risotto, ...otherfood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
 ];
 
-console.log(ingredients);
+//Rest element must be the last element
 
-restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+console.log(otherfood);
 
-restaurant.orderPasta(...ingredients);
+// rest with objects
+
+const { sat, ...weekDays } = restaurant.openingHours;
+console.log(weekDays);
+
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+
+add(9, 8, 97, 6, 5, 6);
+
+const x = [23, 5, 7];
+add(...x); // 35
+
+restaurant.orderPizza(
+  'mushroom',
+  'spice',
+  'sppinach',
+  'mayo',
+  'cheese ',
+  'oregano'
+); // main ingrdient will take mushroom and the rest will be taken by other ingredient
 
 //Destructuring objetcs
 
