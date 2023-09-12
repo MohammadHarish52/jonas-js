@@ -85,44 +85,70 @@ restaurant.orderDelievery({
 // restaurant.orderPasta(...ingredients);
 
 // rest operator
-const [a, b, ...other] = [1, 2, 3, 4, 5];
-console.log(other); // takes the left over values of the arrays
+// const [a, b, ...other] = [1, 2, 3, 4, 5];
+// console.log(other); // takes the left over values of the arrays
 
-const [pizza, , risotto, ...otherfood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
+// const [pizza, , risotto, ...otherfood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
 
-//Rest element must be the last element
+// //Rest element must be the last element
 
-console.log(otherfood);
+// console.log(otherfood);
 
-// rest with objects
+// // rest with objects
 
-const { sat, ...weekDays } = restaurant.openingHours;
-console.log(weekDays);
+// const { sat, ...weekDays } = restaurant.openingHours;
+// console.log(weekDays);
 
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-  console.log(sum);
-};
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   console.log(sum);
+// };
 
-add(9, 8, 97, 6, 5, 6);
+// add(9, 8, 97, 6, 5, 6);
 
-const x = [23, 5, 7];
-add(...x); // 35
+// const x = [23, 5, 7];
+// add(...x); // 35
 
-restaurant.orderPizza(
-  'mushroom',
-  'spice',
-  'sppinach',
-  'mayo',
-  'cheese ',
-  'oregano'
-); // main ingrdient will take mushroom and the rest will be taken by other ingredient
+// restaurant.orderPizza(
+//   'mushroom',
+//   'spice',
+//   'sppinach',
+//   'mayo',
+//   'cheese ',
+//   'oregano'
+// ); // main ingrdient will take mushroom and the rest will be taken by other ingredient
+
+// short circuiting using OR
+console.log('------OR------');
+console.log(3 || 'jonas'); // 3 will be returned since first value is  a truthly value
+console.log('' || 'harish'); // harish
+console.log(true || 0); // true
+console.log(undefined || null); // null
+
+restaurant.numGuests = 25;
+const guests1 = restaurant.numGuests || 'Does not exist'; // 25
+
+// the OR short circuiting works till it find a true value and then returns the same true value
+
+//short circuiting in AND
+
+console.log('------AND-------');
+console.log(0 && 'jonas'); // 0;
+console.log(7 && 'jonas'); // "jonas"
+
+console.log('hello' && 23 && null && 'jonas'); // null will return the statement after the first true value is found
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
 //Destructuring objetcs
 
