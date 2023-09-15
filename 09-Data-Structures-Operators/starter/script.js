@@ -4,7 +4,24 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+const weekDays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 // Data needed for first part of the section
+
+const openingHours = {
+  [weekDays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekDays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekDays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -12,33 +29,23 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function (statrterIndex, mainIndex) {
+  // pre es6 this type of methods were use order:fxn...
+  //but now
+  order(statrterIndex, mainIndex) {
     return [this.starterMenu[statrterIndex], this.mainMenu[mainIndex]];
   },
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
-  orderDelievery: function ({ staterterIndex, mainIndex, time, address }) {
+  orderDelievery({ staterterIndex, mainIndex, time, address }) {
     console.log(
       `order recieved ${this.starterMenu[staterterIndex]}
        and ${this.mainMenu[mainIndex]} will be delievers to
         ${address} and ${time}`
     );
   },
+  // ES6 advanced object literal
+  openingHours,
 
-  orderPizza: function (mainIngredient, ...otherIngredient) {
+  orderPizza(mainIngredient, ...otherIngredient) {
     console.log(mainIngredient);
     console.log(otherIngredient);
   },
@@ -50,6 +57,8 @@ restaurant.orderDelievery({
   mainIndex: 2,
   staterterIndex: 2,
 });
+
+console.log(restaurant);
 
 // spread operator
 // const arr = [7, 8, 9];
@@ -339,12 +348,12 @@ GOOD LUCK 😀
 // team1 < team2 && console.log('Team 1 is more likely to win');
 // team1 > team2 && console.log('Team 2 is more likely to win');
 
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-// For of is used to give you the current element
+// // For of is used to give you the current element
 
-for (const item of menu) console.log(item);
+// for (const item of menu) console.log(item);
 
-// for getting the index we use entries
+// // for getting the index we use entries
 
-for (const [i, el] of menu.entries()) console.log(`${i + 1} : ${el}`);
+// for (const [i, el] of menu.entries()) console.log(`${i + 1} : ${el}`);
