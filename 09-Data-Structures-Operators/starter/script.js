@@ -265,76 +265,86 @@ TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Th
 GOOD LUCK 😀
 */
 
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
 
-const [player1, player2] = game.players;
+// const [player1, player2] = game.players;
 
-console.log(player1);
-console.log(player2);
+// console.log(player1);
+// console.log(player2);
 
-//2
-const [gk, ...fieldPlayers] = player1;
-console.log(gk);
-console.log(fieldPlayers);
+// //2
+// const [gk, ...fieldPlayers] = player1;
+// console.log(gk);
+// console.log(fieldPlayers);
 
-//3
-const allplayers = [...player1, ...player2];
-console.log(allplayers);
+// //3
+// const allplayers = [...player1, ...player2];
+// console.log(allplayers);
 
-//4
-const player1Final = ['Thiago', 'Coutinho', 'Perisic', , ...player1];
-console.log(player1Final);
+// //4
+// const player1Final = ['Thiago', 'Coutinho', 'Perisic', , ...player1];
+// console.log(player1Final);
 
-//5
-const {
-  odds: { team1, x: draw, team2 },
-} = game;
+// //5
+// const {
+//   odds: { team1, x: draw, team2 },
+// } = game;
 
-//6
-function printGoals(...players) {
-  console.log(`${players.length} goals were scored `);
-}
-printGoals(...game.scored);
+// //6
+// function printGoals(...players) {
+//   console.log(`${players.length} goals were scored `);
+// }
+// printGoals(...game.scored);
 
-//7
-team1 < team2 && console.log('Team 1 is more likely to win');
-team1 > team2 && console.log('Team 2 is more likely to win');
+// //7
+// team1 < team2 && console.log('Team 1 is more likely to win');
+// team1 > team2 && console.log('Team 2 is more likely to win');
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// For of is used to give you the current element
+
+for (const item of menu) console.log(item);
+
+// for getting the index we use entries
+
+for (const [i, el] of menu.entries()) console.log(`${i + 1} : ${el}`);
