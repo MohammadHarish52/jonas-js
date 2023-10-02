@@ -357,3 +357,15 @@ GOOD LUCK 😀
 // // for getting the index we use entries
 
 // for (const [i, el] of menu.entries()) console.log(`${i + 1} : ${el}`);
+
+// optional chaining
+console.log(restaurant.openingHours.mon?.open);
+// if the first property doesnt exist immediately undefined will be returned and hence this will help in avoiding erros in the code
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  console.log(day);
+}
+
+// revising everything since i got sick from 23-9-23  to  1-9-23
