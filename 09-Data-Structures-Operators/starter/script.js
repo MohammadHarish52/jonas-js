@@ -139,15 +139,19 @@ console.log(restaurant);
 // console.log('' || 'harish'); // harish
 // console.log(true || 0); // true
 // console.log(undefined || null); // null
+// console.log(undefined || 0 || '' || "Hello" || 23 || null) // Hello
+
 
 // restaurant.numGuests = 25;
 // const guests1 = restaurant.numGuests || 'Does not exist'; // 25
 
-// // the OR short circuiting works till it find a true value and then returns the same true value
+//  the OR short circuiting works till it find a true value and then returns the same true value
 
-// //short circuiting in AND
+// short circuiting in AND
+// hence the OR short circuiting returns the first truthy value while AND short circuiting returns the first False value
 
 // console.log('------AND-------');
+// on truthy values the evaluation continues and after finding a false value it returns the same
 // console.log(0 && 'jonas'); // 0;
 // console.log(7 && 'jonas'); // "jonas"
 
@@ -159,7 +163,7 @@ console.log(restaurant);
 
 // restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
-// // nullish : null and undefined (Not 0 or '')
+ // nullish : null and undefined (Not 0 or '')
 
 // const guestCorrect = restaurant.numGuests ?? 10;
 // console.log(guestCorrect); // 25
