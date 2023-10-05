@@ -141,7 +141,6 @@ console.log(restaurant);
 // console.log(undefined || null); // null
 // console.log(undefined || 0 || '' || "Hello" || 23 || null) // Hello
 
-
 // restaurant.numGuests = 25;
 // const guests1 = restaurant.numGuests || 'Does not exist'; // 25
 
@@ -163,7 +162,7 @@ console.log(restaurant);
 
 // restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
- // nullish : null and undefined (Not 0 or '')
+// nullish : null and undefined (Not 0 or '')
 
 // const guestCorrect = restaurant.numGuests ?? 10;
 // console.log(guestCorrect); // 25
@@ -183,10 +182,10 @@ console.log(restaurant);
 //   owner: 'Zeff',
 // };
 
- // rest1.numOfguests ||= 10; // if numofguests exist then return numofguest else give its value of 10
- // rest2.numOfguests ||= 10;
+// rest1.numOfguests ||= 10; // if numofguests exist then return numofguest else give its value of 10
+// rest2.numOfguests ||= 10;
 
- //Nullish assigment operator
+//Nullish assigment operator
 // rest1.numOfguests ??= 10;
 // rest2.numOfguests ??= 10;
 
@@ -367,7 +366,7 @@ GOOD LUCK 😀
 
 // console.log(restaurant.openingHours?.mon?.open);
 
- // if the first property doesnt exist immediately undefined will be returned and hence this will help in avoiding errors in the code
+// if the first property doesnt exist immediately undefined will be returned and hence this will help in avoiding errors in the code
 
 // const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
@@ -380,18 +379,18 @@ GOOD LUCK 😀
 // Methods
 // console.log(restaurant.order?.(0,1) ?? "Method does not exist")
 
- // Arrays
+// Arrays
 // const users = [{name:"harish" , email: "hellobablu@.io"}];
 
 // console.log(users[0]?.name ?? "User array empty");
 
 // revising everything since i got sick from 23-9-23  to  1-9-23
 
-const properties  = Object.keys(openingHours);
+const properties = Object.keys(openingHours);
 console.log(properties);
 
 let openStr = `We are open on ${properties.length} days: `;
-for(const day of properties){
+for (const day of properties) {
   openStr += `${day}, `;
 }
 console.log(openStr);
@@ -403,9 +402,8 @@ console.log(values);
 //entire object
 const entries = Object.entries(openingHours);
 
-for(const [key,{open,close}] of entries){
+for (const [key, { open, close }] of entries) {
   console.log(` on ${key} we open at ${open} and close at ${close}`);
-  
 }
 ///////////////////////////////////////
 // Coding Challenge #2
@@ -471,14 +469,13 @@ GOOD LUCK 😀
 //       team2: 6.5,
 //     },
 //   };
-  
-  
+
 //   // 1
 //   for(const [i,player] in game.scored.entries()){
 //     console.log(`Goal ${i + 1}: ${player}`)
 //   }
 
-//   // 2 
+//   // 2
 //   const odds = Object.values(game.odds);
 //   let average = 0;
 //   for (const odd of odds){
@@ -487,7 +484,7 @@ GOOD LUCK 😀
 //     console.log(average);
 //   }
 
-//   // 3 
+//   // 3
 //   for (const [team,odd] of Object.entries(game.odds)){
 
 //     console.log(`${team}'s Odds are ${odd}`);
@@ -495,6 +492,7 @@ GOOD LUCK 😀
 
 // sets in javascript
 // contains unique pair of values
+/*
 const orderSet = new Set([
   "pizza",
   "pasta",
@@ -530,7 +528,33 @@ for(const item of orderSet){
 const staff = ["waiter" , "chef" , "waiter" , "manager" , "chef", "waiter"];
 const uniqueStaff =[...new Set(staff)];
 
+*/
+// maps keys can be of any types
+const rest = new Map();
+//to fill up set is used
+rest.set('name', 'KIng kong gun');
+rest.set('1', 'pistol');
+rest.set('2', 'Red Hawk');
 
+console.log(rest);
 
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23);
 
-  
+console.log(rest.get('name'));
+
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+// checking
+console.log(rest.has('categories'));
+rest.delete(2);
+console.log(rest.size);
+// removing everything we use clear
+
+const arr = [1, 2];
+
+rest.set(arr, 'Test');
+console.log(rest.get(arr)); // will throw an error
