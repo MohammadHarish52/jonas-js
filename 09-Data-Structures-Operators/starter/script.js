@@ -616,3 +616,49 @@ checkMiddleSeat('12A');
 
 // string  being a primitive allows
 // method t be used since back of the scene the string gets converted to object
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// fix capitalisation
+const passenger = 'JoNas';
+const passengerLwer = passenger.toLowerCase();
+
+//comparing emails
+const email = 'hello@jonas.io';
+const loginemail = 'Hello@Jonas.Io \n';
+
+//trim remove white spaces
+
+const normalisedemail = loginemail.toLowerCase().trim();
+
+console.log(normalisedemail);
+
+//replacing
+const priceGB = '288,97$';
+const priceINd = priceGB.replace('$', 'RS');
+
+const myDescription = 'I am ugly , and the world thinks i am ugly';
+myDescription.replace('ugly', 'beautiful'); //'i am beautiful'
+
+//targetting all occurence
+// replace is also case sensative
+const newme = myDescription.replace(/ugly/g, 'beautiful');
+console.log(myDescription);
+console.log(newme);
+
+const plan1e = 'A320neo';
+console.log(plan1e.includes('neo'));
+
+if (plan1e.startsWith('A32')) {
+  console.log('Part of a new Airline');
+}
+
+const checkbaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun'))
+    console.log('you are not allowed to take harmful objects');
+};
+checkbaggage('I have a laptop , some Food and a pocket knife');
+checkbaggage('Socks and camera');
+checkbaggage('got some snacks and  a Gun for protection');
