@@ -530,31 +530,89 @@ const uniqueStaff =[...new Set(staff)];
 
 */
 // maps keys can be of any types
-const rest = new Map();
-//to fill up set is used
-rest.set('name', 'KIng kong gun');
-rest.set('1', 'pistol');
-rest.set('2', 'Red Hawk');
+// const rest = new Map();
+// //to fill up set is used
+// rest.set('name', 'KIng kong gun');
+// rest.set('1', 'pistol');
+// rest.set('2', 'Red Hawk');
 
-console.log(rest);
+// console.log(rest);
 
-rest
-  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
-  .set('open', 11)
-  .set('close', 23);
+// rest
+//   .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+//   .set('open', 11)
+//   .set('close', 23);
 
-console.log(rest.get('name'));
+// console.log(rest.get('name'));
 
-const time = 21;
-console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+// const time = 21;
+// console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
 
-// checking
-console.log(rest.has('categories'));
-rest.delete(2);
-console.log(rest.size);
-// removing everything we use clear
+// // checking
+// console.log(rest.has('categories'));
+// rest.delete(2);
+// console.log(rest.size);
+// // removing everything we use clear
 
-const arr = [1, 2];
+// const arr = [1, 2];
 
-rest.set(arr, 'Test');
-console.log(rest.get(arr)); // will throw an error
+// rest.set(arr, 'Test');
+// console.log(rest.get(arr)); // will throw an error
+
+// // another methd of adding items
+// const question = new Map([
+//   ['question', 'What is your name?'],
+//   ['1', 'Mugiwara'],
+//   ['2', 'zoro'],
+//   ['3', 'Sanjidono'],
+//   ['correct', 1],
+//   [true, 'correct'],
+//   [false, 'incorrect'],
+// ]);
+
+// //objects to map
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(question.get('question'));
+
+// for (const [key, value] of question) {
+//   if (typeof key === 'number') console.log(` Answer ${key}: ${value}`);
+// }
+// const answer = Number(prompt('Your Answer'));
+// console.log(answer);
+
+// console.log(question.get(question.get('correct') === answer));
+
+// //convert map tp array
+// console.log([...question]);
+// // question.entries
+// console.log([...question.keys()]);
+
+// strings
+
+const airline = 'Tap Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]); // A
+console.log(plane[1]); // 3
+
+console.log(airline.length); // 16
+
+console.log(airline.indexOf('r'));
+
+console.log(airline.slice(4)); // 4 k baad kaatdega
+console.log(airline.slice(4, 7)); // 4 se 7-1 tk kaat dega
+console.log(airline.slice(0, airline.indexOf(' ')));
+
+console.log(airline.slice(-2)); // peeche se kaat dega
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'C') {
+    console.log('its a middle seat');
+  }
+};
+checkMiddleSeat('11C');
+checkMiddleSeat('12A');
+
+// string  being a primitive allows
+// method t be used since back of the scene the string gets converted to object
