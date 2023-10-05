@@ -42,7 +42,7 @@ const restaurant = {
         ${address} and ${time}`
     );
   },
-  // ES6 advanced object literal
+  // ES6 advanced object literals
   openingHours,
 
   orderPizza(mainIngredient, ...otherIngredient) {
@@ -169,6 +169,7 @@ console.log(restaurant);
 // console.log(guestCorrect); // 25
 
 ////////////////////////////
+
 // logical assigment operators
 // Or assigment operator
 
@@ -182,17 +183,17 @@ console.log(restaurant);
 //   owner: 'Zeff',
 // };
 
-// // rest1.numOfguests ||= 10;
-// // rest2.numOfguests ||= 10;
+ // rest1.numOfguests ||= 10; // if numofguests exist then return numofguest else give its value of 10
+ // rest2.numOfguests ||= 10;
 
-// //Nullish assigment operator
+ //Nullish assigment operator
 // rest1.numOfguests ??= 10;
 // rest2.numOfguests ??= 10;
 
 // console.log(rest1);
 // console.log(rest2);
 
-// //logical AND assignment operator
+//logical AND assignment operator
 
 // rest2.owner &&= 'anonymus';
 
@@ -363,13 +364,173 @@ GOOD LUCK 😀
 // for (const [i, el] of menu.entries()) console.log(`${i + 1} : ${el}`);
 
 // optional chaining
-console.log(restaurant.openingHours.mon?.open);
-// if the first property doesnt exist immediately undefined will be returned and hence this will help in avoiding erros in the code
 
-const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+// console.log(restaurant.openingHours?.mon?.open);
 
-for (const day of days) {
-  console.log(day);
-}
+ // if the first property doesnt exist immediately undefined will be returned and hence this will help in avoiding errors in the code
+
+// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+// for (const day of days) {
+//   console.log(day);
+//  const open =  restaurant.openingHours[day]?.open ?? 'Close'
+//  console.log(`on ${day} we open at ${open}`);
+// }
+
+// Methods
+// console.log(restaurant.order?.(0,1) ?? "Method does not exist")
+
+ // Arrays
+// const users = [{name:"harish" , email: "hellobablu@.io"}];
+
+// console.log(users[0]?.name ?? "User array empty");
 
 // revising everything since i got sick from 23-9-23  to  1-9-23
+
+const properties  = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days: `;
+for(const day of properties){
+  openStr += `${day}, `;
+}
+console.log(openStr);
+
+// property value
+const values = Object.values(openingHours);
+console.log(values);
+
+//entire object
+const entries = Object.entries(openingHours);
+
+for(const [key,{open,close}] of entries){
+  console.log(` on ${key} we open at ${open} and close at ${close}`);
+  
+}
+///////////////////////////////////////
+// Coding Challenge #2
+
+/* 
+Let's continue with our football betting app!
+
+1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
+2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
+3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+      Odd of victory Bayern Munich: 1.33
+      Odd of draw: 3.25
+      Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them (except for "draw"). HINT: Note how the odds and the game objects have the same property names 😉
+
+BONUS: Create an object called 'scorers' which contains the names of the players who scored as properties, and the number of goals as the value. In this game, it will look like this:
+      {
+        Gnarby: 1,
+        Hummels: 1,
+        Lewandowski: 2
+      }
+
+GOOD LUCK 😀
+*/
+
+// const game = {
+//     team1: 'Bayern Munich',
+//     team2: 'Borrussia Dortmund',
+//     players: [
+//       [
+//         'Neuer',
+//         'Pavard',
+//         'Martinez',
+//         'Alaba',
+//         'Davies',
+//         'Kimmich',
+//         'Goretzka',
+//         'Coman',
+//         'Muller',
+//         'Gnarby',
+//         'Lewandowski',
+//       ],
+//       [
+//         'Burki',
+//         'Schulz',
+//         'Hummels',
+//         'Akanji',
+//         'Hakimi',
+//         'Weigl',
+//         'Witsel',
+//         'Hazard',
+//         'Brandt',
+//         'Sancho',
+//         'Gotze',
+//       ],
+//     ],
+//     score: '4:0',
+//     scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//     date: 'Nov 9th, 2037',
+//     odds: {
+//       team1: 1.33,
+//       x: 3.25,
+//       team2: 6.5,
+//     },
+//   };
+  
+  
+//   // 1
+//   for(const [i,player] in game.scored.entries()){
+//     console.log(`Goal ${i + 1}: ${player}`)
+//   }
+
+//   // 2 
+//   const odds = Object.values(game.odds);
+//   let average = 0;
+//   for (const odd of odds){
+//     average += odd;
+//     average /= odds.length;
+//     console.log(average);
+//   }
+
+//   // 3 
+//   for (const [team,odd] of Object.entries(game.odds)){
+
+//     console.log(`${team}'s Odds are ${odd}`);
+//   }
+
+// sets in javascript
+// contains unique pair of values
+const orderSet = new Set([
+  "pizza",
+  "pasta",
+  "noodles",
+  "pasta",
+  "noodles"
+]);
+
+console.log(orderSet);
+console.log(orderSet.size);
+console.log(orderSet.has("hajmola"));
+
+// adding
+
+orderSet.add("manchurian");
+
+// deleting
+
+orderSet.delete('noodles');
+
+// deleting everything
+// orderSet.clear();
+
+console.log(orderSet);
+
+// retreiving values out of set
+for(const item of orderSet){
+  console.log(item);
+}
+
+// sets are generally used with arrays to remove the duplicate values
+// example
+const staff = ["waiter" , "chef" , "waiter" , "manager" , "chef", "waiter"];
+const uniqueStaff =[...new Set(staff)];
+
+
+
+
+  
