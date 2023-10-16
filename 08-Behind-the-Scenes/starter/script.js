@@ -36,6 +36,8 @@
 //   // calcage will have access to global scope variables
 //   // since the outer scope variables are accesible
 //   // variable lookup
+// inner function  have access to all the variables declared in the outer scope this is called variable lookup
+// outer scope have not access to inner scope variables
 // }
 
 // const firstName = 'Harish';
