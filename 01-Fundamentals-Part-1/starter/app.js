@@ -21,7 +21,7 @@
 // // cannot use a reserve js keyword eg new , delete etc...
 // // It should also be avoided to use first letter as capital in js while namig a variable
 // // capital variables are reserved for constant eg  const PI = 3.14
-// // cannot write 3years while naming variables
+// // cannot write 3years while naming variables , numbers should be used but not at starting
 // // try to write a cleaner code always try using naming convention that are easily understandable to users like myFirstJob = "sweeper"
 
 // console.log(fname);
